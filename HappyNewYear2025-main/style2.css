@@ -1,0 +1,170 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+} 
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+body{
+    background-color: black;
+}
+#happy, #newyear{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 50px #974E9E;
+    z-index: 1;
+}
+#happy:after,#newyear:after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: -1;
+    text-align: center;
+    color:#974E9E;
+    filter: blur(30px);
+} 
+#happy{
+    top: 30%;
+    left: 50%;
+    font-family: 'Marck Script', cursive;
+    font-size: 72px;
+    letter-spacing: 12px; 
+}
+#happy:after{
+    font-size: 108px;
+}
+#happy:before{
+    content:'';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #804286;
+    z-index: -2;
+    opacity: 0.5;
+    filter: blur(50px);
+}
+#newyear{
+    top: 60%;
+    left: 50%;
+    font-family: 'Antonio', sans-serif;
+    font-size: 60px;
+    letter-spacing: 18px;
+}
+#newyear:after{
+    font-size: 120px;
+}
+
+/* boton */
+
+.special-button {
+    background-color: rgba(255, 215, 0, 0.3); /* Dorado translúcido */
+    border: 2px solid rgba(255, 215, 0, 0.6); /* Borde dorado más intenso */
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Antonio', sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.special-button:hover {
+    background-color: rgba(255, 215, 0, 0.5); /* Más opaco al pasar el mouse */
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* musica */
+
+/* musica */
+
+/* Botón Opcional */
+.optional-button {
+    background-color: rgba(0, 128, 255, 0.5); /* Azul translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Borde blanco translúcido */
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 50%; /* Botón circular */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.optional-button:hover {
+    background-color: rgba(0, 128, 255, 0.8); /* Fondo más intenso al pasar el cursor */
+    transform: scale(1.1); /* Efecto de zoom */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+}
+
+/* Contenedor del Botón y Control */
+#music-button-container {
+    position: fixed;
+    top: 10px; /* Ajusta según lo lejos que quieras de la parte superior */
+    right: 10px; /* Ajusta según lo lejos que quieras del borde derecho */
+    z-index: 1000;
+    text-align: center;
+    background: rgba(0, 128, 255, 0.1); /* Fondo translúcido del contenedor */
+    border-radius: 15px; /* Bordes redondeados del contenedor */
+    padding: 10px;
+}
+
+/* Barra de Volumen */
+#volume-control {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el label y el slider */
+}
+
+/* Estilo del Label */
+#volume-control label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Estilo del Slider */
+#volume-slider {
+    width: 150px;
+    height: 8px;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.5); /* Fondo del slider */
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#volume-slider:hover {
+    background: rgba(255, 255, 255, 0.8); /* Fondo más claro al pasar el cursor */
+}
+
+#volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%; /* Botón redondeado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
+}
